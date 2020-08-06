@@ -1,0 +1,22 @@
+怎么创建自定义组件(两种后缀名都支持！！！ xxx.js  ||  xxx.jsx)  
+1. 引入核心模块 
+	import React from 'react'
+
+2. 创建组件类，并继承React.Component
+	class XXXX extends React.Component {
+		//必须用render定义视图
+		render(){
+			return <div></div>	
+		}
+	}
+
+3. 暴露组件	
+	export default XXXX
+
+
+
+如何使用自定义组件：
+1. 在需要使用的地方先引入自定义组件
+	import XXXXX from 'xxxxx'
+2. 直接使用标签名，使用即可
+	<XXXXX></XXXXX>

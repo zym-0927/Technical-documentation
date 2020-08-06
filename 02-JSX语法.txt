@@ -1,0 +1,37 @@
+React为了保持和es规范一致！所以没有指令那些乱七八糟的东西！！只有原生js书写方式！
+React没有指令，没有style,template,script这些标签！！！
+
+1. 什么是JSX？ (vue的template灵感来源与jsx)
+	JSX是Facebook推出的语法糖，它允许我们在JS文件中书写<>标记
+	在React中，每一个标记，就是一个JSX
+	因为是语法糖，所以最后会把JSX转译为React.createElement()
+
+	<h1>11</h1>
+	转译后 ===
+	React.createElement('h1')
+	
+2. JSX占位符{}
+	在{}中可以书写任意表达式
+	<h1>{  表达式(变量,函数,三目..等表达式都可)  }</h1>
+
+3. JSX是虚拟DOM节点，和HTML是不同的，最后需要翻译才能变为HTML
+   JSX书写起来和HTML还是有一些细微区别
+	3.1 事件绑定方式
+		react的事件句柄采用了驼峰命名
+		例： onclick=== onClick
+		    <xxx  onClick={ 函数名 } />
+	3.2 动态属性(凡是在react中要获取动态数据，就加{})
+		例： <h1 title={xxxx} >
+	3.3 style属性比较特殊(样式采用驼峰 {fontSize: 'xx', backgroundColor: 'xxx'} )
+		style属性必须给一个js对象
+	3.4 class在JS文件中是关键字
+		class会被替换为className(同原生js)
+
+JSX的核心理念：希望我们把样式 结构 行为都写在同一个组件中！！
+早期的前端开发： index.html  index.css  index.js 他们是分开的！
+而从react开始，它们3就变为了一个整体！！！
+		有了JSX，我们可以把结构，样式，行为，都写在一起
+
+后来vue也借鉴了JSX的灵感（.vue组件）：
+	产生出了template   script    style
+	在一个文件中书写结构 样式 行为

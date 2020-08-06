@@ -1,0 +1,8 @@
+1. 安装脚手架
+	yarn global add create-react-app  
+	
+2. 使用脚手架创建react项目
+	create-react-app 项目名
+	
+3. 启动项目
+	cd 目录 && yarn start

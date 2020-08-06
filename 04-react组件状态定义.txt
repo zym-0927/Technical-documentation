@@ -1,0 +1,36 @@
+1. 组件状态：组件内部动态数据在react中就叫组件状态
+2. 定义组件状态：
+	2.1 创建组件
+	2.2 在class中使用state定义内部状态
+		class XXX extends React.Component {
+			state = {
+				状态1：值,
+				状态2：值,
+				....
+			}
+	
+			render(){
+			
+			}
+			
+		}
+	2.3 JSX中获取状态
+		render(){
+			解构方式：
+			let {xx, xxx, xxxx} = this.state
+
+			return <div>
+				<label>{ this.state.xx  }</label>
+				<button>{ xx }</button>
+			</div>	
+		}	
+3. 组件状态的修改
+	状态修改使用的是this.setState()	覆盖更新状态（小程序的setData就是借鉴此函数）
+	这里注意函数this指向问题！！！！
+	
+    // 改变函数this指向，有三个函数 bind call apply
+    // bind: 改变指向，不会立即执行函数
+    // call apply: 改变this指向，并立即执行1次该函数
+    // 改变this指向， 方法1： this.xxxx.bind(this)
+    //               方法2（少用，会让排版不清晰）： onXXXX={ () => {  this指向正确  } }
+    //               方法3： 创建函数就用箭头函数创建 ,  函数名 =  () => {}
