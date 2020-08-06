@@ -1,0 +1,57 @@
+介绍：
+	早期，react在大项目中进行复杂传值时，自身的props传递会变得很臃肿和复杂！
+	于是facebook提出了概念，应该由专人管理需要交互的复杂数据，我（react）负责构建页面。
+	
+	2015年时，第三方厂商推出了redux(可以给很多框架服务)，redux当年一经推出迅速得到各种大型项目的青睐！
+	后面就有了全家桶的概念： react + router + reudx   各司其职，开发效率更高
+
+
+redux适用场景（有难度的项目）：
+	大型项目，数据交互非常复杂（中小型项目一般是不会使用状态机的，比如redux，vuex）
+
+
+redux的使用：
+	1. 下载redux
+		yarn add redux react-redux -S	（redux：核心模块  react-redux：连接react和redux的模块）
+	2. 引入（新建store文件夹,下面新建index.js）
+		import { createStore } from 'redux'
+	3. 使用
+		var store = createStore(function(){})
+
+
+redux核心概念：
+	store：数据仓库，用来存储所有需要交互的数据！
+	reducer：计算者，计算好一个状态，拿给store去保存（只要想改变store状态，reducer就是唯一方式！）
+	action：通知，action是触发reducer的唯一方式！！  //store.dispatch(action)
+
+
+	//一整套状态完整修改
+	dispatch(action) 触发->   reducer(state,action){ 根据本次action.type计算 return }  返回新的值-> store
+
+
+react中注入redux的数据：
+	1. 在入口js文件，引入刚才暴露的store仓库
+	2. 使用react-redux这个桥梁模块Provider，把store和react联系到一起
+		import { Provider } from 'react-redux'
+
+		// 只要是Provider中的子组件，不管层级有多深，都能直接访问到此store，以此实现数据共享
+		ReactDOM.render( <Provider><App/></Provider> ,xxx)
+	3. 在任意页面获取redux中的值
+		3.1 引入注入数据函数
+			import { connect } from 'react-redux'
+		3.2 把class改变
+			export default connect()(类名)
+		3.3 在connect中传入一个数据过滤函数
+			export default connect((state) => {
+				//state就是store.getState() 所有状态
+				return { xxx : state}	//通过return把redux的state注入到组件中
+			})(类名)
+		3.4 取值，使用this.props.属性名取注入的值
+			this.props.xxx  === 获取到的就是数据过滤函数中的state
+
+connect函数：
+	1. 它可以把redux的数据用props的方式注入到组件中
+	2. 可以把dispatch函数注入到组件中（你可以通过此dispatch去发送一个action！！让reducer去修改store）
+			
+		
+

@@ -1,0 +1,52 @@
+先安装软件环境
+	chrome ff
+	vs code ( atom , Hbuilder )
+	nodejs
+	svn或git
+	美术类的工具选择自己喜欢的即可
+	
+	U盘备份以上所有软件,进公司第一天直接安装
+	
+	
+	
+构建Vue项目
+	1. 安装yarn
+		npm i yarn -g
+		使用yarn global bin查看yarn的全局安装路径
+		复制此串路径,把路径增加到系统环境变量的path属性中
+		
+		
+	2. 安装vue脚手架
+		yarn global add @vue/cli
+		npm i @vue/cli -g
+	
+	3. 创建一个项目
+		vue create 项目
+		yarn serve 启动项目
+
+	4. 安装UI框架
+		4.1 下载安装
+			yarn add element-ui -S
+		4.2 引入
+			在main.js中
+			import ElementUI from 'element-ui'
+			import 'element-ui/lib/theme-chalk/index.css'
+
+			Vue.use(ElementUI)
+			
+		4.3 使用
+			直接使用标签实例化组件即可
+			<el-button>测试按钮</el-button>
+			
+	5. 构建企业级项目目录
+		assets --静态资源
+			fonts --字体
+			imgs  --图片
+			styles--样式
+		apis   --所有请求	
+		components --公共组件(在多个页面中使用的公共部分)
+		pages/views --页面
+		main.js   --入口JS文件
+		App.vue	  --入口组件
+		router.js --路由配置文件
+		

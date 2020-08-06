@@ -1,0 +1,25 @@
+生命周期：
+ 挂载阶段（初始化阶段）：
+	constructor: 初始化组件状态
+	componentWillMount: state初始化完毕，可以开始渲染(V17.0.0大版本会被移除，官方不推荐使用)
+	render: 翻译JSX为HTML片段，并渲染
+	componentDidMount： 组件初始化渲染完毕
+
+ 运行阶段（更新）：
+	用户交互，发生状态改变
+	shouldComponentUpdate: (进阶函数)状态发生变化，是否允许更新（true允许|false阻止）
+	componentWillUpdate: 可以开始更新  (V17.0.0大版本会被移除，官方不推荐使用)
+	render: 翻译JSX为HTML片段，并渲染
+	componentDidUpdate: 组件更新完毕
+	componentWillReceiveProps: 组件接收到新的props，可以开始下一步(支线)
+
+ 卸载阶段（回收资源）：
+	componentWillUnmount: 组件移除前最后一次通知，下一步就是释放内存空间
+
+
+
+总共9个钩子函数，3大阶段
+迅速眼熟：
+	componentDidMount (初始化发送请求，初始化获取DOM节点)
+	componentDidUpdate （有时需要在数据变化界面更新完毕后继续进行下一步操作）
+	

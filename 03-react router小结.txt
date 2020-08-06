@@ -1,0 +1,33 @@
+1. 下载安装
+	yarn add react-router-dom@4.3.0 -D
+
+2. 在要使用路由切换的页面引入路由组件
+	import { HashRouter } from 'react-router-dom'
+
+	render(){
+		return <HashRouter>
+			//路由容器，在此组件中发生组件切换 （router-view就类似它）
+		</HashRouter>	
+	}
+
+3. 书写要匹配的路线
+	import {  HashRouter , Switch , Route} from 'react-router-dom'
+	
+	render(){
+	return <HashRouter>
+			<Switch>
+				<Route path='/' exact component={xx}></Route>	
+				<Route path='/xxx' exact component={xx}></Route>
+				<Route path='/xxxx' exact component={xx}></Route>
+
+				//默认路线
+				<Route compoent={ 容错页面 }/>
+			</Switch>
+		</HashRouter>	
+	}
+
+// HashRouter: 路由器组件（路由容器），在此组件中发生路由切换  （vue的router-view和它类似）
+// Route: 路线匹配组件，如果匹配到path的url，就去加载对应的component
+// Switch： 多路线选择组件，匹配到其中一个以后，就返回
+// Link： router版的超链接，点击以后会改变hash值，进行组件切换 <Link to='/xxx'>点我跳转</Link>
+	

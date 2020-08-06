@@ -1,0 +1,14 @@
+1. 全局安装express脚手架工具(已经装过了)
+	yarn global add express-generator
+	
+2. 使用脚手架创建一个express服务器
+	express 项目名
+	
+3. 手动安装依赖,在启动服务器
+	yarn    ||   npm i  安装所有依赖
+	yarn start 启动
+	
+express服务器的默认端口是3000
+	
+	
+后台服务器的作用: 监听浏览器发过去的请求, 响应对应数据!!

@@ -1,0 +1,186 @@
+
+
+
+
+<script>
+    // ***********************************************************js方法
+    // --选择器
+    dom.parentNode;      // 父节点
+    dom.childNodes;      // 全部子节点
+    dom.firstChild;      // 第一个子节点
+    dom.lastChile;       // 最后一个子节点　
+    dom.previousSibling; // 上一个兄弟节点
+    dom.nextSibling;     // 下一个兄弟节点
+    // --元素操作
+    dom.createElement()   //增加元素
+    dom.removeChild()     //删除元素(dom父元素)
+    dom.replacechild(a, b)//a新元素b旧元素
+    dom.appendChild()     //插入元素
+    dom.innerHTML()       //插入元素或内容
+    //--数组
+    push()      // 尾部追加
+    pop()       // 尾部删除
+    unshift()   // 头部添加
+    shift()     // 头部删除
+    reverse()   // 反转顺序
+    sort()      // 排序
+    join()      // 数组变为字符串
+    concat()    // 连接数组
+    includes()  // 检测数组是否包含
+    indexOf()   // 检测数组中是否包含指定元素
+    slice()     // 截取
+    splice()    // 删除 添加 替换 
+    // --循环方法
+    map()      //有返回值,返回一个新数组
+    forEach()  //循环 没有返回值
+    filter()   //过滤
+    every()    //每一个都满足 返回true  否则返回false
+    some()     //只要有一个满足 返回true
+    //--字符串
+    replace()     // 删除 添加 替换 
+    charAt()      // 检索字符
+    charCodeAt()  // 字符的 Unicode 编码
+    concat()      // 连接字符串
+    includes()    // 包含
+    indexOf()     // 检索是否有某个字符
+    slice()       // 截取
+    split()       // 字符串转为数组
+    substr()      // 截取
+    substring()   // 截取
+    toLowerCase() // 转为小写
+    toUpperCase() // 转为大写
+    trim()        //去除字符串的头尾空格
+    isEmpty()     //判断函数入参值是否为空
+    // --定时器
+    setInterval()//重复
+    setTimeout()//
+    clearInterval()//清除定时器
+    // --事件
+    onabort	    //图像加载被中断
+    onblur	    //元素失去焦点
+    onchange	//用户改变域的内容	
+    onclick	    //鼠标点击某个对象
+    ondblclick	//鼠标双击某个对象			
+    onerror	    //当加载文档或图像时发生某个错误			
+    onfocus	    //元素获得焦点			
+    onkeydown	//某个键盘的键被按下			
+    onkeypress	//某个键盘的键被按下或按住			
+    onkeyup  	//某个键盘的键被松开			
+    onload	    //某个页面或图像被完成加载			
+    onmousedown	//某个鼠标按键被按下			
+    onmousemove	//鼠标被移动			
+    onmouseout	//鼠标从某元素移开			
+    onmouseover	//鼠标被移到某元素之上			
+    onmouseup	//某个鼠标按键被松开			
+    onreset	    //重置按钮被点击			
+    onresize	//窗口或框架被调整尺寸			
+    onselect	//文本被选定			
+    onsubmit	//提交按钮被点击			
+    onunload	//用户退出页面
+    // --鼠标位置
+    window.event.screenX, screenY // 相对于屏幕的位置
+    window.event.clientX, clientY //相对于浏览器窗口的位置
+    window.event.pageX || e.clientX + scrollX//相对于文档的位置
+    //滚动条(chrome)
+    document.body.scrollLeft //滚动条距左距离
+    document.body.scrollTop  //滚动条距上距离
+    //滚动条(ie)
+    document.documentElement.scrollLeft//滚动条距左距离
+    document.documentElement.scrollTop//滚动条距上距离
+    loadScript()  //异步加载js
+
+    // ***********************************************************jq方法
+    // --选择器(兄弟)
+    $('#id').siblings()   //当前元素所有的兄弟节点
+    $('#id').prev()       //当前元素前一个兄弟节点
+    $('#id').prevaAll()   //当前元素之前所有的兄弟节点
+    $('#id').prevUntil()  //方法返回介于两个给定参数'之外'(不包括端点)的所有跟随的同胞元素。
+    $('#id').next()       //当前元素之后第一个兄弟节点
+    $('#id').nextAll()    //当前元素之后所有的兄弟节点
+    $('#id').nextUntil()  //方法返回介于两个给定参数'之间'(不包括端点)的所有跟随的同胞元素。
+    // --选择器(父)
+    $("#id").parent();  // 父节点
+    $("#id").parents(); // 全部父节点
+    // --选择器(子)
+    $("#id").children(); // 全部子节点
+    $("#id").find();     //方法是获得在当前结果集中每个元素的后代
+    // --选择器(条件)
+    $("#id").contents();   // 返回#test里面的所有内容，包括节点和文本
+    $("#id").eq();        // 选取元素中匹配的索引顺序为1的元素(也就是第2个li元素)
+    $("#id").first();      // 选取元素中匹配的第一个元素
+    $("#id").last();       // 选取元素中匹配的最后一个元素
+    $("#id").slice(2, 4);  // 选取第2 ~ 4个元素
+    $("#id").filter();     // 选取元素中所有满足条件的元素(包括自己) :odd选择器奇数 :even偶数
+    $("#id").has();        // 选取元素中所有满足条件的元素(不包括自己)
+    $("#id").not();        // 选取元素中所有不满足条件的元素
+    $("#id").first()       //方法返回被选元素的首个元素。
+    $("#id").last()        //方法返回被选元素的最后一个元素。
+    //--
+    $('#id').bind('事件类型', function () { }) //绑定事件
+    $('#id').on('事件类型', function () { }) //绑定事件
+    $('#id').事件类型(function () { }) //绑定事件
+    $('#id').slideToggle()//隐藏或显示元素
+    $('#id').show()   //显示的元素
+    $('#id').hide()   //隐藏的元素
+    // --元素操作
+    $('#id').val()     //设置/获取input输入框的值
+    $('#id').html()    //设置元素的值
+    $('#id').text()    //设置元素的值
+    $('#id').append()  //在被选元素的结尾插入内容
+    $('#id').prepend() //在被选元素的开头插入内容
+    $('#id').after()   //在被选元素之后插入内容
+    $('#id').before()  //在被选元素之前插入内容
+    $('#id').remove()  //删除被选元素（及其子元素）
+    $('#id').empty()   //从被选元素中删除子元素
+    // --属性操作
+    $('#id').attr()   //设置或返回被选元素的属性值(自定义属性)
+    $('#id').prop()   //设置或返回被选元素的属性值(自带属性)
+
+
+    //react 
+    //1. 挂载卸载过程
+
+    1.1.constructor()//中完成了React数据的初始化，它接受两个参数：props和context，当想在函数内部使用这两个参数时，需使用super()传入这两个参数。
+    1.2.componentWillMount()//在渲染前调用,
+    1.3.componentDidMount()//在第一次渲染后调用，
+    1.4.componentWillUnmount()//在组件从 DOM 中移除之前立刻被调用。
+    //2. 更新过程
+    2.1.componentWillReceiveProps(nextProps)//在组件接收到一个新的 prop (更新后)时被调用。这个方法在初始化render时不会被调用。
+    2.2.shouldComponentUpdate(nextProps, nextState)//返回一个布尔值。在组件接收到新的props或者state时被调用。在初始化时不会被调用。
+    2.3.componentWillUpdate(nextProps, nextState)//在组件接收到新的props或者state但还没有render时被调用。在初始化时不会被调用。
+    2.4.componentDidUpdate(prevProps, prevState)//在组件完成更新后立即调用。在初始化时不会被调用。
+    2.5.render()
+    //3. React新增的生命周期(个人补充)
+    3.1.getDerivedStateFromProps(nextProps, prevState)
+    //代替 componentWillReceiveProps()老版本中的componentWillReceiveProps()/方法判断前后两个 props 是否相同，如果不同再将新的 props 更新到相应的 state 上去。这样做一来会破坏 state 数据的单一数据源，导致组件状态变得不可预测，另一方面也会增加组件的重绘次数。
+    3.2.getSnapshotBeforeUpdate(prevProps, prevState)
+    //代替 componentWillUpdate()常见的 componentWillUpdate()的用例是在组件更新前，读取当前某个 DOM 元素的状态，并在 componentDidUpdate 中进行相应的处理。
+</script>
+<style>
+    /* ***********************************************************css */
+    .p {
+        /*取消点击字体变蓝*/
+        user-select: none;
+        /*文本阴影*/
+        box-shadow: 1px 1px 5px #000;
+        /* 去除ul li默认css样式 */
+        list-style: none;
+        /* 清除浮动 */
+        clear: both;
+
+    }
+</style>
+
+
+
+
+
+二、多光标
+2、按住Ctrl + Alt，再按键盘上向上或者向下的键，可以使一列上出现多个光标。
+3、选中一段文字，按shift+alt+i，可以在每行末尾出现光标
+4、光标放在一个地方，按ctrl+shift+L或者ctrl+f2，可以在页面中出现这个词的不同地方都出现光标。有时候这个快捷键的作用和f2重命名变量类似，但是它更加广泛，因为还可以对比如字符串相同的非同一变量或函数类的东西修改。
+5、按shift+alt，再使用鼠标拖动，也可以出现竖直的列光标，同时可以选中多列。
+
+
+
+
